@@ -27,7 +27,7 @@ function displayResults(responseJson) {
     for(let i = 0; i < responseJson.length; i++){
         console.log(responseJson[i]);
         $("#results").empty();
-        $("#results").append(`<ul><li>${responseJson[i].id.name}</li></ul>`);
+        $("#results").append(`<ul><li>${responseJson[i].name}</li></ul>`);
         $("#results").removeClass("hidden");
     }
 
