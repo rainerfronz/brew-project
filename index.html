@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lyric Search</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <form action="#" class="js-search-form">
+    <fieldset name="beer-search">
+      <legend>US brewery Search</legend>
+      <label for="query-artist">State:</label>
+      <input type="text" class="js-query-state" placeholder="Minnesota" id="query-state" required>
+      <button type="submit">Submit</button>
+    </fieldset>
+    </form>
+    <div id="js-error-message"></div>
+    <section id="results" class="hidden">
+    </section>
+  </div>
+    <script src="script.js"></script>
+   
+</body>
+
+</html>
