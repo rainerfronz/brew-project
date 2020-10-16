@@ -1,8 +1,8 @@
 'user strict';
 
-function getBrewery(state) {
+function getBrewery(state, type) {
 
-    const url = `https://api.openbrewerydb.org/breweries?by_state=${state}`;
+    const url = `https://api.openbrewerydb.org/breweries?by_state=${state}&sort=${type},-name`;
     console.log(url);
     console.log(state);
     
@@ -24,14 +24,16 @@ function getBrewery(state) {
 
 function displayResults(responseJson) {
     console.log(responseJson);
+    $("#results").empty();
     for(let i = 0; i < responseJson.length; i++){
         console.log(responseJson[i]);
-        $("#results").empty();
-        $("#results").append(`<ul><li>${responseJson[i].name}</li></ul>`);
+        // for(let j = 0; j < responseJson.length; j++){
+       
+        $("#results").append(`<ul><li>${responseJson[i].name}</li><li>${responseJson[i].brewery_type}</li></ul>`);
         $("#results").removeClass("hidden");
     }
-
-}
+    }
+// }
 
 
 
@@ -40,8 +42,9 @@ function watchForm() {
     $('form').submit(e => {
         e.preventDefault();
         const state = $("#query-state").val();
+        const type = $("#brewery").val();
         console.log(state);
-        getBrewery(state);
+        getBrewery(state, type);
     });
     
 }
