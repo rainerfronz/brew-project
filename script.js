@@ -2,7 +2,7 @@
 
 function getBrewery(state, type) {
 
-    const url = `https://api.openbrewerydb.org/breweries?by_state=${state}&sort=${type},-name`;
+    const url = `https://api.openbrewerydb.org/breweries?by_state=${state}&sort=${type}`;
     console.log(url);
     console.log(state);
     
